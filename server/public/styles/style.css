@@ -1,0 +1,22 @@
+#importanceGrid{
+    background-color: salmon;
+    height: 50px;
+    width: auto
+}
+
+#taskGrid{
+    background-color: mediumaquamarine;
+    height: 50px;
+}
+
+#buttonGrid{
+    background-color: burlywood;
+    height: 50px;
+}
+
+#headingText{
+    height: 200px;
+    background-color: slategray;
+    color: white;
+    font-family: 'Times New Roman', Times, serif
+}

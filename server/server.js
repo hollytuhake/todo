@@ -9,8 +9,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('server/public'));
 
 // point to router
-var list = require('./routes/list.js');
-app.use('/list', list);
+//var list = require('./routes/list.js');
+//app.use('/list', list);
 
 // What port?
 app.listen(port, function () {
