@@ -20,3 +20,6 @@ app.use('/list', listRouter);
 app.listen(port, function () {
     console.log('listening on port', port);
 });
+
+var poolModule = require('./modules/pool.js');
+var pool = poolModule;
