@@ -40,15 +40,15 @@ function appendTasks(tasks){
         var $trow = $('#tasksTableData').append('<tr></tr>');
         console.log(task.complete);
         if(task.complete===false){
-            $($trow).append('<td>' + task.task + '</td>');
-            $($trow).append('<td> <button id="completeBtn" type=button class="complete btn btn-primary" data-id =" ' + task.id + '">  Complete </button> </td>');
-            $($trow).append('<td> <button type=button class="delete btn btn-danger" data-id =" ' + task.id + '">  Delete </button> </td>');
+            $($trow).append('<td class="color' + task.importance +'">' + task.task + '</td>');
+            $($trow).append('<td class="color' + task.importance +'"> <button id="completeBtn" type=button class="complete btn btn-primary" data-id =" ' + task.id + '">  Complete </button> </td>');
+            $($trow).append('<td class="color' + task.importance +'"> <button type=button class="delete btn btn-danger" data-id =" ' + task.id + '">  Delete </button> </td>');
         }else{
-            $($trow).append('<td>' + task.task + '</td>');
-            $($trow).append('<td> Complete! </td>');
-            $($trow).append('<td> <button type=button class="delete btn btn-danger" data-id =" ' + task.id + '">  Delete </button> </td>');
+            $($trow).append('<td class="color' + task.importance +'">' + task.task + '</td>');
+            $($trow).append('<td class="color' + task.importance +'"> Complete! </td>');
+            $($trow).append('<td class="color' + task.importance +'"> <button type=button class="delete btn btn-danger" data-id =" ' + task.id + '">  Delete </button> </td>');
         }
-        }//end loop
+    }//end for loop
 }//end append tasks
 
 function addTask() {
@@ -97,13 +97,19 @@ function completeTask() {
 
 function deleteTask(){
     console.log('in deleteTask');
-    var taskId = $(this).data("id");
-    $.ajax({
-        type: "DELETE",
-        url: '/list/'+taskId,
-    }).done(function(response){
-        getTasks();
-    }).fail(function(error){
-        console.log('deleteTask ajax Error');
-    });
+    var confirmation = confirm("Are you sure you don't want to make this hapen?");
+    if(confirmation===true){
+        var taskId = $(this).data("id");
+        $.ajax({
+            type: "DELETE",
+            url: '/list/'+taskId,
+        }).done(function(response){
+            getTasks();
+        }).fail(function(error){
+            console.log('deleteTask ajax Error');
+        });
+    }
+    else{
+        console.log('decided against deleting');
+    }
 }//end deleteTask

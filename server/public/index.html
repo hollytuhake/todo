@@ -23,19 +23,19 @@
                 <h1>Make it happen.</h1>
             </div>
         </div>
-        <div id="inputFields" class="row">
-            <div id=importanceGrid class="col-md-2">
-                <label id=importanceLabel for="importance">Importance</label>
-                <input type="number" id="importance" value="" style="color:black" placeholder="On a scale of 1 to 3">
-            </div>
-            <div id="taskGrid" class="col-md-2">
+        <div id="inputFields">
+            <div id="taskGrid">
                 <label for="task">Task To Be Done</label>
                 <input type="text" id="task" value="" style="color:black" placeholder="i.e. Sweep Garage">
             </div>
-            <div class="blankGrid col-md-8 hidden-sm-down">
+            <br>
+            <div id=importanceGrid>
+                <label id=importanceLabel for="importance">Importance</label>
+                <input type="number" id="importance" value="" style="color:black" placeholder="On a scale of 1 to 3">
             </div>
+            <br>
         </div>
-        <div class="buttonGrid col-md-2">
+        <div class="buttonGrid">
             <button class="btn btn-default" id="addTask">Add Task</button>
         </div>
         <table id="tasksTable" class="table table-bordered">
