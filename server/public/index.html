@@ -11,33 +11,46 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.css">
         <link rel="stylesheet" href="vendors/bootstrap/css/bootstrap-theme.css">
-        <link href="styles/styles.css" rel="stylesheet">
+        <link href="styles/style.css" rel="stylesheet">
         <script src="vendors/jquery.min.js" charset="utf-8"></script>
         <script src="scripts/client.js" charset="utf-8"></script>
         <link rel="icon" href="favicon.ico">
     </head>
     <body>
-    <div class=container>
-         <div id="row">
-            <div class="headingText" col-md-12 heading">
-                <h1>Let's get things done!</h1>
+    <div class="container">
+        <div id=title class="row text-center">
+            <div class="col-md-12">
+                <h1>Make it happen.</h1>
             </div>
         </div>
-        <div id="addTaskRow" class="row">
+        <div id="inputFields" class="row">
             <div id=importanceGrid class="col-md-2">
-                <label for="importance">Importance</label>
-                <input type="number" id="importance" value="" placeholder="On a scale of 1 to 3">
+                <label id=importanceLabel for="importance">Importance</label>
+                <input type="number" id="importance" value="" style="color:black" placeholder="On a scale of 1 to 3">
             </div>
             <div id="taskGrid" class="col-md-2">
                 <label for="task">Task To Be Done</label>
-                <input type="text" id="task" value="" placeholder="i.e. Sweep Garage">
+                <input type="text" id="task" value="" style="color:black" placeholder="i.e. Sweep Garage">
             </div>
-            <div id="buttonGrid" class="col-md-2">
-                <button type="button" class="btn btn-primary" id="addButton">Add Task</button>
-            </div>
-            <div id="emptySpaceGrid" class="hidden-sm-down col-md-6">
+            <div class="blankGrid col-md-8 hidden-sm-down">
             </div>
         </div>
+        <div class="buttonGrid col-md-2">
+            <button class="btn btn-default" id="addTask">Add Task</button>
+        </div>
+        <table id="tasksTable" class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Task</th>
+                    <th>Complete</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody id=tasksTableData>
+            </tbody>
+        </table>    
+        </div>
     </div>
+
     </body>
 </html>
