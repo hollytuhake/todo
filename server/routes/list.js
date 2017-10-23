@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var toDoList = []; // <- Stored on the SERVER
+var poolModule = require('../modules/pool.js');
+var pool = poolModule;
 
 var pg = require('pg');
 var config = {
