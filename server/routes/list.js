@@ -4,6 +4,7 @@ var toDoList = []; // <- Stored on the SERVER
 var poolModule = require('../modules/pool.js');
 var pool = poolModule;
 
+/*
 var pg = require('pg');
 var config = {
     database: 'deneb', // the name of the database
@@ -12,6 +13,7 @@ var config = {
     max: 10, // how many connections at one time
     idleTimeoutMillis: 3000 // Close idle connections to db after
 };
+*/
 console.log('in router');
 
 var pool = new pg.Pool(config);
