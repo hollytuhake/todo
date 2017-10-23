@@ -16,7 +16,7 @@ var config = {
 */
 console.log('in router');
 
-var pool = new pg.Pool(config);
+//var pool = new pg.Pool(config);
 
 router.get('/',function(req,res){
     pool.connect(function(errorConnectingToDb, db, done){
